@@ -5,32 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/main.css">
   
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="header"></header>
+  
+  <main>
+    <div class="container">
+      <section class="todo-header">
+        <h1 class="logo">Todo</h1>
+        <picture class="theme-toggle">
+          <img class="light-theme-btn" src="./images/icon-sun.svg">
+          <img class="dark-theme-btn hide" src="./images/icon-moon.svg">
+        </picture>    
+      </section>
 
-  Todo
+      <section class="todo-new-todo">
+        <input type="text" id="todo-new-input" place="Create a new todo...">
+      </section>
 
-  <!-- Add dynamic number --> items left
+      <section class="todo-list">
+        <div class="todo-item">
+          <div class="circle todo-item-checkmark-wrapper">
+            <img class="checkmark show" src="./images/icon-check.svg">
+          </div>
+          <p class="todo-item-description">jog around the park 3x</p>
+          <img class="todo-item-delete" src="./images/icon-cross.svg">
+        </div>
 
-  All
-  Active 
-  Completed
+        <div class="todo-info">
+          <p class="todo-remaining-todos">
+            <span class="todo-count">5</span><!-- Add dynamic number -->
+            items left
+          </p>
 
-  Clear Completed
+          <menu class="todo-filter-list">
+            <li><button class="todo-filter-all">All</button></li>
+            <li><button class="todo-filter-active">Active</button></li>
+            <li><button class="todo-filter-completed">Completed</button></li>
+          </menu>
 
-  Drag and drop to reorder list
+          <button class="todo-clear-completed">Clear Completed</button>
+        </div>
+      </section>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <section class="todo-footer">
+        <p class="footer-text">
+          Drag and drop to reorder list
+        </p>  
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Jordan Patel</a>.
+    </div>  
+  </footer>
+
 </body>
 </html>

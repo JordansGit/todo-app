@@ -1,0 +1,35 @@
+/* Things I've learnt (add to readme): 
+  html5 semantic way to create a non-dropdown filterable list (menu tag > each item contained inside <li><button>...</button</li>. 
+
+
+*/
+
+
+/*
+list filtering html semantics: 
+- do not use a href tags, these are to link to different pages or different sections of a page. 
+- if it was a dropdown menu, i'd use 
+  <select id="filter-categories">
+    <option value="all">All Animals</option>
+    <option value="cats">Cats</option>
+    <option value="dogs">Dogs</option>
+    <option value="lizards">Lizards</option>
+    <option value="chupacabras">Chupacabras</option>
+  </select>
+But I'm not using a dropdown menu so I won't use this. 
+
+This is the correct way (menu tag instead of ul).  
+<menu>
+  <li><button> one </button</li>
+  <li><button> two </button</li>
+  ...
+</menu>
+
+The <menu> and <ul> elements both represent an unordered list of items. The key difference is that <ul> primarily contains items for display, while <menu> was intended for interactive items
+*/ 
+
+/* 
+p vs button tag. 
+p represents text for display. 
+button represents interactive element. 
+*/ 
