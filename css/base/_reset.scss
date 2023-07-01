@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body, h1, p, menu {
+  margin: 0;
+}
+
+button, menu, input {
+  padding: 0;
+}
+
+button, input {
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: none;
+}
+
+menu {
+  list-style-type: none;
+}

@@ -28,17 +28,33 @@
       </section>
 
       <section class="todo-new-todo">
-        <input type="text" id="todo-new-input" place="Create a new todo...">
+        <div class="circle"></div>
+        <input type="text" id="todo-new-input" placeholder="Create a new todo...">
       </section>
 
       <section class="todo-list">
         <div class="todo-item">
-          <div class="circle todo-item-checkmark-wrapper">
-            <img class="checkmark show" src="./images/icon-check.svg">
+          <div class="circle todo-item-checkmark show-check">
+            <img class="checkmark" src="./images/icon-check.svg">
+          </div>
+          <p class="todo-item-description checked">jog around the park 3x</p>
+          <img class="todo-item-delete" src="./images/icon-cross.svg">
+        </div>
+        <div class="todo-item">
+          <div class="circle todo-item-checkmark">
+            <img class="checkmark" src="./images/icon-check.svg">
           </div>
           <p class="todo-item-description">jog around the park 3x</p>
           <img class="todo-item-delete" src="./images/icon-cross.svg">
         </div>
+        <div class="todo-item">
+          <div class="circle todo-item-checkmark">
+            <img class="checkmark " src="./images/icon-check.svg">
+          </div>
+          <p class="todo-item-description">jog around the park 3x</p>
+          <img class="todo-item-delete" src="./images/icon-cross.svg">
+        </div>
+
 
         <div class="todo-info">
           <p class="todo-remaining-todos">
@@ -47,9 +63,9 @@
           </p>
 
           <menu class="todo-filter-list">
-            <li><button class="todo-filter-all">All</button></li>
-            <li><button class="todo-filter-active">Active</button></li>
-            <li><button class="todo-filter-completed">Completed</button></li>
+            <li><button class="todo-filter-btn todo-filter-all active">All</button></li>
+            <li><button class="todo-filter-btn todo-filter-active">Active</button></li>
+            <li><button class="todo-filter-btn todo-filter-completed">Completed</button></li>
           </menu>
 
           <button class="todo-clear-completed">Clear Completed</button>
@@ -57,7 +73,7 @@
       </section>
 
       <section class="todo-footer">
-        <p class="footer-text">
+        <p class="todo-footer-text">
           Drag and drop to reorder list
         </p>  
       </section>

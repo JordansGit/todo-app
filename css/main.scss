@@ -1,183 +1,70 @@
-/* variables */ 
-
-/* resets */ 
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-body, h1, p, menu {
-  margin: 0;
-}
-
-button, menu, input {
-  padding: 0;
-}
-
-button, input[type=text] {
-  border: none;
-}
-
-button {
-  outline: none;
-  font-size: 1rem;
-  background: none;
-}
-
-menu {
-  list-style-type: none;
-}
+/* Abstracts */ 
+@import './abstracts/variables';
+@import './base/reset';
 
 
 
-/* colors */ 
-:root {
-  // Primary
-  --bright-blue: hsl(220, 98%, 61%);
-  --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  
-  // light theme 
-  --very-light-gray: hsl(0, 0%, 98%);
-  --very-light-grayish-blue: hsl(236, 33%, 92%);
-  --light-grayish-blue: hsl(233, 11%, 84%);
-  --dark-grayish-blue: hsl(236, 9%, 61%);
-  --very-dark-grayish-blue: hsl(235, 19%, 35%);
-
-  // dark theme 
-  --very-dark-blue: hsl(235, 21%, 11%);
-  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --light-grayish-blue: hsl(234, 39%, 85%);
-  --light-grayish-blue: hsl(236, 33%, 92%); // (hover)
-  --dark-grayish-blue: hsl(234, 11%, 52%);
-  --very-dark-grayish-blue: hsl(233, 14%, 35%);
-  --very-dark-grayish-blue: hsl(237, 14%, 26%);
-}
-
+/* Colours */ 
 .logo {
   color: white;
 }
+.active {
+  color: var(--bright-blue) !important;
+}
+.todo-item-description, #todo-new-input {
+  color: var(--light-grayish-blue);
+}
+.checked {
+  color: var(--very-dark-grayish-blue-2);
+}
+.todo-remaining-todos, .todo-clear-completed, .todo-filter-all, .todo-filter-active, .todo-filter-completed {
+  color: var(--dark-grayish-blue);
+}
 
-.todo-item-checkmark-wrapper {
-  background: var(--bright-blue);
+.todo-footer, ::placeholder {
+  color: var(--very-dark-grayish-blue-1);
 }
 
 
 
 
-
-
-/* typography */ 
-* {
-  font-family: 'Josefin Sans', sans-serif;
-}
-html {
-  font-size: 18px;
+main, footer {
+  background: var(--very-dark-blue);
 }
 
-.logo {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  letter-spacing: 10px;
+.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
+  background: var(--very-dark-desaturated-blue);
+  padding: 1.1em 1.3em;
 }
 
-.todo-new-input, p, button {
-  font-weight: 400;
+.todo-item {
+  border-bottom: 1px solid hsla(234, 39%, 85%, 0.2);
 }
 
-
-
-
-/* General */ 
-
-.hide {
-  display: none !important;
-}
-
-.container {
-  margin: 0 auto;
-  margin-left: 1.2em;
-  margin-right: 1.2em;
-  max-width: 550px;
-  position: absolute;
-  z-index: 1;
-  top: 2em;
-}
-
-
-// we use circle because this class is also in the search bar, BUT, we also have the check wrapper because we will add hover states to that. 
 .circle {
-  height: 18px;
-  width: 18px;
-  border: 1px solid black;
-  border-radius: 50%;
+  border: 1px solid hsla(234, 39%, 85%, 0.2);
+}
+
+.show-check {
+  background: var(--check-background);
+  border: 1px solid var(--check-background); // keep .show-check under .circle or use !important. 
 }
 
 
-/* header */ 
-.header {
-  height: 200px;
-  background: url(../images/bg-mobile-dark.jpg);
 
-  @media (min-width: 600px) {
-    height: 300px;
-    background: url(../images/bg-desktop-dark.jpg);
-  }
-}
 
-.todo-header {
-  display: flex;
-  justify-content: space-between;
-}
+/* Base */ 
+@import './base/typography';
+@import './base/general';
 
-/* main */ 
+/* Layout */ 
+@import './layout/layout';
 
-/* new todo */ 
-#todo-new-input {
-  border: 1px solid black;
-  width: 100%;
-}
+/* Components */ 
+@import './components/todo';
 
-/* todo list */ 
-.todo-list {
-  .todo-item {
-    display: flex;
-    border-bottom: 1px solid gray;
 
-    .todo-item-checkmark-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    .todo-item-delete {
-      margin-left: auto;
-    }
-  }
-
-  .todo-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .todo-filter-list {
-      display: flex;
-    }
-  }
-}
-
-/* footer */ 
-/* default style that came with project */ 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-
-.footer-text {
-  text-align: center; 
-}
 
 
 /* to do: 

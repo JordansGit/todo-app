@@ -1,0 +1,21 @@
+.hide {
+  display: none !important;
+}
+
+.show-check {
+  img {
+    display: block !important;
+  }
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+// we use circle because this class is also in the search bar, BUT, we also have the check wrapper because we will add hover states to that. 
+.circle {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  margin-right: 0.7em;
+}
