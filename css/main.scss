@@ -1,61 +1,12 @@
 /* Abstracts */ 
 @import './abstracts/variables';
+@import './abstracts/mixins';
 @import './base/reset';
-
-
-
-/* Colours */ 
-.logo {
-  color: white;
-}
-.active {
-  color: var(--bright-blue) !important;
-}
-.todo-item-description, #todo-new-input {
-  color: var(--light-grayish-blue);
-}
-.checked {
-  color: var(--very-dark-grayish-blue-2);
-}
-.todo-remaining-todos, .todo-clear-completed, .todo-filter-all, .todo-filter-active, .todo-filter-completed {
-  color: var(--dark-grayish-blue);
-}
-
-.todo-footer, ::placeholder {
-  color: var(--very-dark-grayish-blue-1);
-}
-
-
-
-
-main, footer {
-  background: var(--very-dark-blue);
-}
-
-.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
-  background: var(--very-dark-desaturated-blue);
-  padding: 1.1em 1.3em;
-}
-
-.todo-item {
-  border-bottom: 1px solid hsla(234, 39%, 85%, 0.2);
-}
-
-.circle {
-  border: 1px solid hsla(234, 39%, 85%, 0.2);
-}
-
-.show-check {
-  background: var(--check-background);
-  border: 1px solid var(--check-background); // keep .show-check under .circle or use !important. 
-}
-
-
-
 
 /* Base */ 
 @import './base/typography';
 @import './base/general';
+@import './base/colours';
 
 /* Layout */ 
 @import './layout/layout';
@@ -63,14 +14,7 @@ main, footer {
 /* Components */ 
 @import './components/todo';
 
-
-
-
-
-/* to do: 
-set colours for dark theme in colours section. 
-then do paddings, etc. 
-then watch tut on 'color theme mixin sass'
-implement light and dark toggle themes. 
-
+/* To do
+  active states 
+  js 
 */ 

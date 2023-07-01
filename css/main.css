@@ -2,18 +2,43 @@
 :root {
   --bright-blue: hsl(220, 98%, 61%);
   --check-background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  --very-light-gray: hsl(0, 0%, 98%);
-  --very-light-grayish-blue: hsl(236, 33%, 92%);
-  --light-grayish-blue: hsl(233, 11%, 84%);
-  --dark-grayish-blue: hsl(236, 9%, 61%);
-  --very-dark-grayish-blue: hsl(235, 19%, 35%);
-  --very-dark-blue: hsl(235, 21%, 11%);
-  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
-  --light-grayish-blue: hsl(234, 39%, 85%);
-  --light-grayish-blue-hover: hsl(236, 33%, 92%);
-  --dark-grayish-blue: hsl(234, 11%, 52%);
-  --very-dark-grayish-blue-1: hsl(233, 14%, 35%);
-  --very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+  --lt-very-light-gray: hsl(0, 0%, 98%);
+  --lt-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --lt-light-grayish-blue: hsl(233, 11%, 84%);
+  --lt-dark-grayish-blue: hsl(236, 9%, 61%);
+  --lt-very-dark-grayish-blue: hsl(235, 19%, 35%);
+  --lt-very-dark-grayish-blue-opacity: hsla(235, 19%, 35%, 0.2);
+  --dt-very-dark-blue: hsl(235, 21%, 11%);
+  --dt-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --dt-light-grayish-blue: hsl(234, 39%, 85%);
+  --dt-light-grayish-blue-opacity: hsla(234, 39%, 85%, 0.2);
+  --dt-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dt-dark-grayish-blue: hsl(234, 11%, 52%);
+  --dt-very-dark-grayish-blue-1: hsl(233, 14%, 35%);
+  --dt-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
+  --main-bg: var(--dt-very-dark-blue);
+  --todo-bg: var(--dt-very-dark-desaturated-blue);
+  --todo-border: var(--dt-light-grayish-blue-opacity);
+  --todo-circle: var(--dt-light-grayish-blue-opacity);
+  --todo-text: var(--dt-light-grayish-blue);
+  --todo-checked: var(--dt-very-dark-grayish-blue-2);
+  --todo-info: var(--dt-dark-grayish-blue);
+  --todo-footer: var(--dt-very-dark-grayish-blue-1);
+  --header-bg-mobile: url(../images/bg-mobile-dark.jpg);
+  --header-bg-desktop: url(../images/bg-desktop-dark.jpg);
+}
+
+.light-theme {
+  --main-bg: var(--lt-very-light-grayish-blue);
+  --todo-bg: var(--lt-very-light-gray);
+  --todo-border: var(--lt-very-dark-grayish-blue-opacity);
+  --todo-circle: var(--lt-very-dark-grayish-blue-opacity);
+  --todo-text: var(--lt-very-dark-grayish-blue);
+  --todo-checked: var(--lt-light-grayish-blue);
+  --todo-info: var(--lt-dark-grayish-blue);
+  --todo-footer: var(--lt-dark-grayish-blue);
+  --header-bg-mobile: url(../images/bg-mobile-light.jpg);
+  --header-bg-desktop: url(../images/bg-desktop-light.jpg);
 }
 
 * {
@@ -42,57 +67,6 @@ button, input {
 
 menu {
   list-style-type: none;
-}
-
-/* Colours */
-.logo {
-  color: white;
-}
-
-.active {
-  color: var(--bright-blue) !important;
-}
-
-.todo-item-description, #todo-new-input {
-  color: var(--light-grayish-blue);
-}
-
-.checked {
-  color: var(--very-dark-grayish-blue-2);
-}
-
-.todo-remaining-todos, .todo-clear-completed, .todo-filter-all, .todo-filter-active, .todo-filter-completed {
-  color: var(--dark-grayish-blue);
-}
-
-::-moz-placeholder {
-  color: var(--very-dark-grayish-blue-1);
-}
-
-.todo-footer, ::placeholder {
-  color: var(--very-dark-grayish-blue-1);
-}
-
-main, footer {
-  background: var(--very-dark-blue);
-}
-
-.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
-  background: var(--very-dark-desaturated-blue);
-  padding: 1.1em 1.3em;
-}
-
-.todo-item {
-  border-bottom: 1px solid hsla(234, 39%, 85%, 0.2);
-}
-
-.circle {
-  border: 1px solid hsla(234, 39%, 85%, 0.2);
-}
-
-.show-check {
-  background: var(--check-background);
-  border: 1px solid var(--check-background);
 }
 
 /* Base */
@@ -136,6 +110,11 @@ html {
 .todo-footer-text {
   text-align: center;
 }
+@media (min-width: 600px) {
+  .todo-footer-text {
+    font-size: 0.9rem;
+  }
+}
 
 .hide {
   display: none !important;
@@ -154,6 +133,56 @@ html {
   width: 22px;
   border-radius: 50%;
   margin-right: 0.7em;
+  border: 1px solid;
+}
+
+main, footer {
+  background: var(--main-bg);
+}
+
+.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
+  background: var(--todo-bg);
+}
+
+.todo-item {
+  border-color: var(--todo-border);
+}
+
+.circle {
+  border-color: var(--todo-circle);
+}
+
+.todo-item-description, #todo-new-input {
+  color: var(--todo-text);
+}
+
+.checked {
+  color: var(--todo-checked);
+}
+
+.todo-remaining-todos, .todo-clear-completed, .todo-filter-btn {
+  color: var(--todo-info);
+}
+
+::-moz-placeholder {
+  color: var(--todo-footer);
+}
+
+.todo-footer, ::placeholder {
+  color: var(--todo-footer);
+}
+
+.logo {
+  color: white;
+}
+
+.active {
+  color: var(--bright-blue);
+}
+
+.show-check {
+  background: var(--check-background);
+  border: 1px solid var(--check-background);
 }
 
 /* Layout */
@@ -163,7 +192,7 @@ body {
 
 .header {
   height: 200px;
-  background: url(../images/bg-mobile-dark.jpg);
+  background: var(--header-bg-mobile);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -171,7 +200,7 @@ body {
 @media (min-width: 600px) {
   .header {
     height: 300px;
-    background: url(../images/bg-desktop-dark.jpg);
+    background: var(--header-bg-desktop);
   }
 }
 
@@ -187,13 +216,20 @@ main {
 /* footer */
 /* default style that came with project */
 .attribution {
-  color: white;
+  color: black;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.attribution {
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  background: white;
 }
 
 /* Components */
@@ -225,6 +261,7 @@ main {
   margin-top: 2.5em;
   margin-bottom: 20px;
   border-radius: 8px;
+  padding: 1.1em 1.3em;
 }
 .container .todo-new-todo #todo-new-input {
   width: 100%;
@@ -236,6 +273,8 @@ main {
 .container .todo-list .todo-item {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid;
+  padding: 1.1em 1.3em;
 }
 .container .todo-list .todo-item:first-child {
   border-top-left-radius: 8px;
@@ -259,6 +298,7 @@ main {
   position: relative;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  padding: 1.1em 1.3em;
 }
 .container .todo-list .todo-info .todo-filter-list {
   display: flex;
@@ -271,6 +311,7 @@ main {
   top: 59px;
   width: 100%;
   border-radius: 8px;
+  padding: 1.1em 1.3em;
 }
 @media (min-width: 600px) {
   .container .todo-list .todo-info .todo-filter-list {
@@ -283,11 +324,13 @@ main {
 .container .todo-footer {
   margin-top: 100px;
 }
+@media (min-width: 600px) {
+  .container .todo-footer {
+    margin-top: 50px;
+  }
+}
 
-/* to do: 
-set colours for dark theme in colours section. 
-then do paddings, etc. 
-then watch tut on 'color theme mixin sass'
-implement light and dark toggle themes. 
-
+/* To do
+  active states 
+  js 
 *//*# sourceMappingURL=main.css.map */

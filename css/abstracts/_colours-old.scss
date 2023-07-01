@@ -1,0 +1,119 @@
+/* Colours Light Theme */ 
+.logo {
+  color: white; // STAYS THE SAME
+}
+.active {
+  color: var(--bright-blue) !important;// STAYS THE SAME
+}
+.show-check {
+  background: var(--check-background); // STAYS THEM SAME
+  border: 1px solid var(--check-background) !important; // keep .show-check under .circle or use !important. 
+}
+
+
+
+//main bg 
+main, footer {
+  background: var(--very-light-grayish-blue); //var(--very-dark-blue);
+}
+
+//todo bg
+.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
+  background: var(--very-light-gray); // dark theme: background: var(--very-dark-desaturated-blue);
+}
+
+// todo bottom border 
+.todo-item {
+  border-bottom: 1px solid var(--very-dark-grayish-blue-opacity); //dark theme: border-bottom: 1px solid var(--light-grayish-blue-opacity);
+}
+
+// circle border 
+.circle {
+  border: 1px solid var(--very-dark-grayish-blue-opacity); //dark theme: border: 1px solid var(--light-grayish-blue-opacity);
+}
+
+// todo-text 
+.todo-item-description, #todo-new-input {
+  color: var(--very-dark-grayish-blue);  //dark theme: color: var(--light-grayish-blue);
+}
+
+// todo-checked 
+.checked {
+  color: var(--light-grayish-blue); //dark theme:  color: var (--very-dark-grayish-blue-2);
+}
+
+// todo-info 
+.todo-remaining-todos, .todo-clear-completed, .todo-filter-all, .todo-filter-active, .todo-filter-completed {
+  color: var(--dark-grayish-blue);
+}
+
+//footer-text 
+.todo-footer, ::placeholder {
+  color: var(--dark-grayish-blue); //   color: var(--very-dark-grayish-blue-1);
+}
+
+
+
+
+
+
+
+
+
+
+.header {
+  height: 200px;
+  background: url(../images/bg-mobile-light.jpg);
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+
+  @media (min-width: 600px) {
+    height: 300px;
+    background: url(../images/bg-desktop-light.jpg);
+  }
+}
+
+
+
+/* Colours Dark Theme */ 
+// .logo {
+//   color: white;
+// }
+// .active {
+//   color: var(--bright-blue) !important;
+// }
+// .show-check {
+//   background: var(--check-background);
+//   border: 1px solid var(--check-background) !important; // keep .show-check under .circle or use !important. 
+// }
+
+// main, footer {
+//   background: var(--very-dark-blue);
+// }
+
+// .todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
+//   background: var(--very-dark-desaturated-blue);
+// }
+
+// .todo-item {
+//   border-bottom: 1px solid hsla(234, 39%, 85%, 0.2);
+// }
+
+// .circle {
+//   border: 1px solid hsla(234, 39%, 85%, 0.2);
+// }
+
+// .todo-item-description, #todo-new-input {
+//   color: var(--light-grayish-blue);
+// }
+// .checked {
+//   color: var(--very-dark-grayish-blue-2);
+// }
+// .todo-remaining-todos, .todo-clear-completed, .todo-filter-all, .todo-filter-active, .todo-filter-completed {
+//   color: var(--dark-grayish-blue);
+// }
+
+// .todo-footer, ::placeholder {
+//   color: var(--very-dark-grayish-blue-1);
+// }

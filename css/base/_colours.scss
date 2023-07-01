@@ -1,0 +1,51 @@
+//main bg 
+main, footer {
+  background: var(--main-bg);
+}
+
+//todo bg
+.todo-new-todo, .todo-item, .todo-info, .todo-filter-list {
+  background: var(--todo-bg);
+}
+
+// todo bottom border 
+.todo-item {
+  border-color: var(--todo-border);
+}
+
+// circle border 
+.circle {
+  border-color: var(--todo-circle);
+}
+
+// todo-text 
+.todo-item-description, #todo-new-input {
+  color: var(--todo-text);
+}
+
+// todo-checked 
+.checked {
+  color: var(--todo-checked);
+}
+
+// todo-info 
+.todo-remaining-todos, .todo-clear-completed, .todo-filter-btn {
+  color: var(--todo-info);
+}
+
+//footer-text 
+.todo-footer, ::placeholder {
+  color: var(--todo-footer);
+}
+
+
+.logo {
+  color: white; 
+}
+.active {
+  color: var(--bright-blue);// keep .active under .todo-filter-btn or use !important. 
+}
+.show-check {
+  background: var(--check-background); 
+  border: 1px solid var(--check-background); // keep .show-check under .circle or use !important. 
+}

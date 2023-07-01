@@ -36,4 +36,8 @@ html {
 
 .todo-footer-text {
   text-align: center; 
+
+  @media (min-width: 600px) {
+    font-size: 0.9rem;
+  }
 }

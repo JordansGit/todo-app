@@ -4,14 +4,14 @@ body {
 
 .header {
   height: 200px;
-  background: url(../images/bg-mobile-dark.jpg);
+  background: var(--header-bg-mobile);
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
 
   @media (min-width: 600px) {
     height: 300px;
-    background: url(../images/bg-desktop-dark.jpg);
+    background: var(--header-bg-desktop);
   }
 }
 
@@ -25,5 +25,10 @@ main {
 
 /* footer */ 
 /* default style that came with project */ 
-.attribution { color: white; font-size: 11px; text-align: center; }
+.attribution { color: black; font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+.attribution {
+  width: max-content;
+  margin: 0 auto;
+  background: white;
+}

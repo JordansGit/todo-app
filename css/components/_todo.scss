@@ -2,6 +2,10 @@
   border-radius: 8px;
 }
 
+@mixin todoPadding {
+  padding: 1.1em 1.3em;
+}
+
 .container {
   margin: 0 auto;
   left: 1.2em;
@@ -29,6 +33,7 @@
     margin-top: 2.5em;
     margin-bottom: 20px;
     @include borderRadius;
+    @include todoPadding;
 
     #todo-new-input {
       width: 100%;
@@ -43,6 +48,8 @@
     .todo-item {
       display: flex;
       align-items: center;
+      border-bottom: 1px solid;
+      @include todoPadding;
 
       &:first-child {
         border-top-left-radius: 8px;
@@ -71,6 +78,7 @@
       position: relative;
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
+      @include todoPadding;
     
       .todo-filter-list {
         display: flex;
@@ -83,6 +91,7 @@
         top: calc(39px + 20px);
         width: 100%;
         @include borderRadius;
+        @include todoPadding;
       
         @media (min-width: 600px) {
           padding: 0;
@@ -97,6 +106,10 @@
   /* todo footer */ 
   .todo-footer {
     margin-top: 100px;
+
+    @media (min-width: 600px) {
+      margin-top: 50px;
+    }
   }
 }
 
