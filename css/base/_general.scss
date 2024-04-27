@@ -20,3 +20,7 @@
   margin-right: 0.7em;
   border: 1px solid;
 }
+
+.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed {
+  cursor: pointer;
+}

@@ -136,6 +136,10 @@ html {
   border: 1px solid;
 }
 
+.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed {
+  cursor: pointer;
+}
+
 main, footer {
   background: var(--main-bg);
 }
