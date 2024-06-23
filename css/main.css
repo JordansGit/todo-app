@@ -136,7 +136,7 @@ html {
   border: 1px solid;
 }
 
-.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed {
+.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed, .circle {
   cursor: pointer;
 }
 
@@ -279,10 +279,19 @@ main {
   align-items: center;
   border-bottom: 1px solid;
   padding: 1.1em 1.3em;
+  /* need this class for js to work for toggleTodoChecked() */
 }
 .container .todo-list .todo-item:first-child {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+}
+.container .todo-list .todo-item .todo-item-checkmark, .container .todo-list .todo-item .todo-item-description {
+  pointer-events: none;
+}
+.container .todo-list .todo-item .todo-item-description, .container .todo-list .todo-item .todo-item-delete {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .container .todo-list .todo-item .todo-item-checkmark {
   display: flex;

@@ -56,6 +56,18 @@
         border-top-right-radius: 8px;    
       }
 
+      /* need this class for js to work for toggleTodoChecked() */ 
+      .todo-item-checkmark, .todo-item-description {
+        pointer-events: none;
+      }
+
+      .todo-item-description, .todo-item-delete {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
       .todo-item-checkmark {
         display: flex;
         align-items: center;
