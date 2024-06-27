@@ -1,6 +1,5 @@
 import { todoData } from './data.js'
 
-console.log(todoData)
 const themeToggleBtn = document.querySelector('.theme-toggle-btn')
 const todoItemsDiv = document.getElementById('todo-items')
 const todoListDiv = document.getElementById('todo-list')
@@ -18,12 +17,9 @@ themeToggleBtn.addEventListener('click', function() {
 
 render() /* need to call render first so the html of the todo's loads. */
 
-// Cross/Uncross Todo's (aka mark a todo as done via linethrough)
+ 
 
-
-
-
-// Delete Todo's. 
+// Delete Todo's & Toggle marked/checked for todos 
 todoListDiv.addEventListener('click', function(e) {
   if (e.target.dataset.todoItem) { /* if anywhere inside todo div is clicked, except del btn, do ... */ 
     // mark the checked todo. 
@@ -35,22 +31,19 @@ todoListDiv.addEventListener('click', function(e) {
 })
 
 function toggleTodoChecked(todoItem) {
-  const checkbox = todoItem.querySelector('.circle')
-  const todoItemDescription = todoItem.querySelector('.todo-item-description')
+  const targetTweetObj = todoData.filter(todo => todo.uuid === todoItem.dataset.todoItem)[0]
 
-  checkbox.classList.toggle('show-check')
-  todoItemDescription.classList.toggle('checked')
-  console.log(checkbox)
-  console.log(todoItemDescription)
-  console.log("done")
-
+  targetTweetObj.checked = !targetTweetObj.checked
+  render()
 }
 
 function deleteTodo(todoItemId) {
   const targetTweetObj = todoData.filter(todo => todo.uuid === todoItemId)[0] /* get target tweet obj */ 
-  console.log(todoData.indexOf(targetTweetObj))
-  console.log(targetTweetObj)
-  todoData.forEach(todo => console.log(todo === targetTweetObj))
+  const index = todoData.indexOf(targetTweetObj)
+  //todoData.forEach(todo => console.log(todo === targetTweetObj))
+  todoData.splice(index, 1)
+  render()
+  console.log(todoData)
 }
 
 // Dynamically Render Todo's
@@ -58,26 +51,28 @@ function getTodoItems() {
   let todoItems = ``
 
   /* this is dummy text for now to show what happens when I have a certain todos checked. */ 
-  todoItems += `
-  <div class="todo-item" id="todo-item" data-todo-item=${todoData[0].uuid}>
-    <div class="circle todo-item-checkmark show-check"> <!-- class: 'show-check' --> 
-      <img class="checkmark" src="./images/icon-check.svg">
-    </div>
-    <p class="todo-item-description checked">jog around the park 3x</p> <!-- class: 'checked' --> 
-    <img class="todo-item-delete" id="todo-item-delete" src="./images/icon-cross.svg" data-todo-del=${todoData[0].uuid}>
-  </div>
-  `
-  todoData.forEach(todo => {
-    todoItems += `
-    <div class="todo-item" id="todo-item" data-todo-item=${todo.uuid}>
-      <div class="circle todo-item-checkmark">
-        <img class="checkmark" src="./images/icon-check.svg">
+  if (todoData.length > 0) {
+    todoData.forEach(todo => {
+      let checkmarkClass = ''
+      let checkedDescriptionClass = ''
+    
+      if (todo.checked) {
+        checkmarkClass = 'show-check'
+        checkedDescriptionClass = 'checked'
+      }     
+
+      todoItems += `
+      <div class="todo-item" id="todo-item" data-todo-item=${todo.uuid}>
+        <div class="circle todo-item-checkmark ${checkmarkClass}">
+          <img class="checkmark" src="./images/icon-check.svg">
+        </div>
+        <p class="todo-item-description ${checkedDescriptionClass}">${todo.description}</p>
+        <img class="todo-item-delete" id="todo-item-delete" src="./images/icon-cross.svg" data-todo-del=${todo.uuid}>
       </div>
-      <p class="todo-item-description">${todo.description}</p>
-      <img class="todo-item-delete" id="todo-item-delete" src="./images/icon-cross.svg" data-todo-del=${todo.uuid}>
-    </div>
-    `
-  })
+      `
+    })
+  
+  }
 
   return todoItems
 }
@@ -89,15 +84,15 @@ function render() {
 render() // don't need to call this as it's already being called during toggle toggleTodoChecked()
 
 
-// ?? 
-/*
-let todos = document.querySelectorAll('.todo-item')
-console.log(todos)
-todos.forEach(todo => {
-  todo.addEventListener('click', function(e) {
-    
-  })
-})
-*/ 
 
 // currently working on adding toggleCheckedTodo functionality 
+
+/* Learning Notes 
+Delete Todo's Function
+  for my delete todo's function, currently I'm using array.splice. 
+  I'm thinking is there a better more appropriate, non-destructive way I should be doing this instead. 
+  for now I'll leave it tho. Might come back and edit this function in the future. 
+
+
+
+*/ 
