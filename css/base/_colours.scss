@@ -33,6 +33,10 @@ main, footer {
   color: var(--todo-info);
 }
 
+.todo-remaining-todos:hover, .todo-clear-completed:hover, .todo-filter-btn:hover {
+  color: var(--todo-info-hover);
+}
+
 //footer-text 
 .todo-footer, ::placeholder {
   color: var(--todo-footer);

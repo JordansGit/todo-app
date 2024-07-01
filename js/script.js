@@ -89,7 +89,6 @@ const filterCompleted = document.querySelector('.todo-filter-completed')
 
 todoFilterList.addEventListener('click', function(e) {
   todoFilterBtns.forEach(filter => {
-    //console.log(filter)
     filter.classList.remove('active')
     e.target.classList.add('active')
   })
@@ -104,35 +103,23 @@ todoFilterList.addEventListener('click', function(e) {
     active = false;
     completed = false
   }
-  console.log("active: " + active)
-  //console.log("completed: " + completed)
+
   render()
 })
 
 
 // clear completed todos btn 
 const clearTodosBtn = document.querySelector('.todo-clear-completed')
-
 clearTodosBtn.addEventListener('click', clearTodos)
 
 function clearTodos() {
-  // todoData = todoData.filter(todo => !todo.isChecked)
-  // todoData.forEach((todo) => {
-  //   let index = todoData.indexOf(todo)
-  //   if (todo.isChecked) {
-  //     console.log(index)
-  //     todoData.splice(todoData.indexOf(index, 1))
-  //   }
-  // })
   for (let i = todoData.length - 1; i >= 0; i--) {
     let index = todoData.indexOf(todoData[i])
       if (todoData[i].isChecked) {
         todoData.splice(i, 1)
       }
   }
-  console.log(todoData)
   render()
-
 }
 
 
@@ -189,11 +176,11 @@ function render() {
   i've done the filter list, but I'm unsure if my way is ideal way or not. 
     - also idk if it will be compatible w/ saving new todos to database/data.js file. 
 
+  css for circle hover, for both themes. cba to do right now. 
   
 */ 
 
 /* Bugs
-  css: the top banner doesn't extend the image to cover entire width. it repeats itself. 
   css: the design breaks once the list of todo's extends passed current screen. the bottom bg turns white, can't see the footer text. 
 
 */ 

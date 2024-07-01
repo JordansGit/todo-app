@@ -23,6 +23,7 @@
   --todo-text: var(--dt-light-grayish-blue);
   --todo-checked: var(--dt-very-dark-grayish-blue-2);
   --todo-info: var(--dt-dark-grayish-blue);
+  --todo-info-hover: white;
   --todo-footer: var(--dt-very-dark-grayish-blue-1);
   --header-bg-mobile: url(../images/bg-mobile-dark.jpg);
   --header-bg-desktop: url(../images/bg-desktop-dark.jpg);
@@ -36,6 +37,7 @@
   --todo-text: var(--lt-very-dark-grayish-blue);
   --todo-checked: var(--lt-light-grayish-blue);
   --todo-info: var(--lt-dark-grayish-blue);
+  --todo-info-hover: var(--lt-very-dark-grayish-blue);
   --todo-footer: var(--lt-dark-grayish-blue);
   --header-bg-mobile: url(../images/bg-mobile-light.jpg);
   --header-bg-desktop: url(../images/bg-desktop-light.jpg);
@@ -136,7 +138,7 @@ html {
   border: 1px solid;
 }
 
-.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed, .circle {
+.theme-toggle-btn, .todo-item-delete, .todo-filter-btn, .todo-clear-completed, .circle, .todo-item {
   cursor: pointer;
 }
 
@@ -166,6 +168,10 @@ main, footer {
 
 .todo-remaining-todos, .todo-clear-completed, .todo-filter-btn {
   color: var(--todo-info);
+}
+
+.todo-remaining-todos:hover, .todo-clear-completed:hover, .todo-filter-btn:hover {
+  color: var(--todo-info-hover);
 }
 
 ::-moz-placeholder {

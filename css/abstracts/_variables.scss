@@ -29,6 +29,7 @@
   --todo-text: var(--dt-light-grayish-blue);
   --todo-checked: var(--dt-very-dark-grayish-blue-2);
   --todo-info: var(--dt-dark-grayish-blue);
+  --todo-info-hover: white; 
   --todo-footer: var(--dt-very-dark-grayish-blue-1);
   --header-bg-mobile: url(../images/bg-mobile-dark.jpg);
   --header-bg-desktop: url(../images/bg-desktop-dark.jpg);
@@ -43,6 +44,7 @@
   --todo-text: var(--lt-very-dark-grayish-blue);
   --todo-checked: var(--lt-light-grayish-blue);
   --todo-info: var(--lt-dark-grayish-blue);
+  --todo-info-hover: var(--lt-very-dark-grayish-blue);
   --todo-footer: var(--lt-dark-grayish-blue);
   --header-bg-mobile: url(../images/bg-mobile-light.jpg);
   --header-bg-desktop: url(../images/bg-desktop-light.jpg);
