@@ -1,4 +1,4 @@
-const todoData = [
+let todoData = [
   {
     description: `jog around the park 3x`, 
     uuid: '4b161eee-c0f5-4545-9c4b-8562944223ee', 
