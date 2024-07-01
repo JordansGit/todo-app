@@ -4,14 +4,14 @@ body {
 
 .header {
   height: 200px;
-  background: var(--header-bg-mobile);
+  background-image: var(--header-bg-mobile);
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
 
   @media (min-width: 600px) {
     height: 300px;
-    background: var(--header-bg-desktop);
+    background-image: var(--header-bg-desktop);
   }
 }
 

@@ -182,16 +182,14 @@ function render() {
   getTodoCount()
 }
 
-//render() // don't need to call this as it's already being called during toggle toggleTodoChecked()
 
 /* To do 
   save new todos to database or local storage or the data.js file. 
 
   i've done the filter list, but I'm unsure if my way is ideal way or not. 
     - also idk if it will be compatible w/ saving new todos to database/data.js file. 
-    - also because i'm re-rendering it every time w/ new todoData list, the todoCount on bottom left changes when I click on active or completed, which is not what I want. 
-      -> but this may be fixed when I sort out saving todos to data.js file. 
 
+  
 */ 
 
 /* Bugs
